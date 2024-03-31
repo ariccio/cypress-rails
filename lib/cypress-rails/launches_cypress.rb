@@ -21,7 +21,6 @@ module CypressRails
       end
     end
 
-
     def call(command, config)
       puts config
       @initializer_hooks.run(:before_server_start)
