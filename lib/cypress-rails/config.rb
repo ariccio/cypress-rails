@@ -36,7 +36,7 @@ module CypressRails
          CYPRESS_RAILS_BASE_PATH...............#{base_path.inspect}
          CYPRESS_RAILS_TRANSACTIONAL_SERVER....#{transactional_server.inspect}
          CYPRESS_RAILS_CYPRESS_OPTS............#{cypress_cli_opts.inspect}
-         CYPRESS_RAILS_OVERRIDE_FULL_BASE_PATH......#{override_full_base_path.inspect}
+         CYPRESS_RAILS_OVERRIDE_FULL_BASE_PATH......#{@override_full_base_path.inspect}
       DESC
     end
   end
