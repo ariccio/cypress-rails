@@ -12,7 +12,7 @@ module CypressRails
       base_path: Env.fetch("CYPRESS_RAILS_BASE_PATH", default: "/"),
       transactional_server: Env.fetch("CYPRESS_RAILS_TRANSACTIONAL_SERVER", type: :boolean, default: true),
       cypress_cli_opts: Env.fetch("CYPRESS_RAILS_CYPRESS_OPTS", default: ""),
-      override_full_base_path: Env.fetch("CYPRESS_RAILS_OVERRIDE_FULL_BASE_PATH"),
+      override_full_base_path: Env.fetch("CYPRESS_RAILS_OVERRIDE_FULL_BASE_PATH")
     )
       @rails_dir = rails_dir
       @cypress_dir = cypress_dir
