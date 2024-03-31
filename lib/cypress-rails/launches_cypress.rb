@@ -13,6 +13,15 @@ module CypressRails
       @finds_bin = FindsBin.new
     end
 
+    def url(server, config)
+      unless config.override_full_base_path
+        "http://#{server.host}:#{server.port}#{config.base_path}"
+      else
+        config.override_full_base_path
+      end
+    end
+
+
     def call(command, config)
       puts config
       @initializer_hooks.run(:before_server_start)
@@ -29,7 +38,7 @@ module CypressRails
       set_exit_hooks!(config)
 
       command = <<~EXEC
-        CYPRESS_BASE_URL="http://#{server.host}:#{server.port}#{config.base_path}" "#{bin}" #{command} --project "#{config.cypress_dir}" #{config.cypress_cli_opts}
+        CYPRESS_BASE_URL="#{url(server, config)}" "#{bin}" #{command} --project "#{config.cypress_dir}" #{config.cypress_cli_opts}
       EXEC
 
       puts "\nLaunching Cypress…\n$ #{command}\n"
