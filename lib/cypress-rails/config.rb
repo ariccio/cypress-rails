@@ -2,7 +2,7 @@ require_relative "env"
 
 module CypressRails
   class Config
-    attr_accessor :rails_dir, :cypress_dir, :host, :port, :base_path, :transactional_server, :cypress_cli_opts
+    attr_accessor :rails_dir, :cypress_dir, :host, :port, :base_path, :transactional_server, :cypress_cli_opts, :override_full_base_path
 
     def initialize(
       rails_dir: Env.fetch("CYPRESS_RAILS_DIR", default: Dir.pwd),
