@@ -164,11 +164,11 @@ preferred environment variables project-wide using a tool like
   requests to the app (e.g. via `cy.visit()`). If you've customized your
   `baseUrl` setting (e.g. in `cypress.config.js`), you'll need to duplicate it with
   this environment variable
-* **CYPRESS_RAILS_OVERRIDE_FULL_BASE_PATH** NOTE TO SELF (@ariccio): does not seem needed??! works witout it now? ~There are ugly use cases that are least unreasonably handled by feeding a different port and base path to the CYPRESS_BASE_URL than to the CYPRESS_RAILS_PORT.
+* **CYPRESS_RAILS_OVERRIDE_FULL_BASE_PATH** NOTE TO SELF (@ariccio): does not seem needed??! works witout it now? ~~There are ugly use cases that are least unreasonably handled by feeding a different port and base path to the CYPRESS_BASE_URL than to the CYPRESS_RAILS_PORT.
 
 This adds an option to do so without affecting any other functionality.
 
-My current use case for this is a very less-than-ideal case where I want to launch a dev server to serve the frontend that cypress runs against. I did try to do various other things (like hacking in the code from cypress-rails into my rails backend!) but this so far is the only way that works and reasonably fits my use case.~ 
+My current use case for this is a very less-than-ideal case where I want to launch a dev server to serve the frontend that cypress runs against. I did try to do various other things (like hacking in the code from cypress-rails into my rails backend!) but this so far is the only way that works and reasonably fits my use case.~~
 * **CYPRESS_RAILS_TRANSACTIONAL_SERVER** (default: `true`) when true, will start
   a transaction on all database connections before launching the server. In
   general this means anything done during `cypress open` or `cypress run` will
